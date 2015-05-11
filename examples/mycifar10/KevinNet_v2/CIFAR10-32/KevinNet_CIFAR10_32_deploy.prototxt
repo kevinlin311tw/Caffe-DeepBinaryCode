@@ -201,7 +201,7 @@ layers {
   bottom: "fc7"
   top: "fc8_kevin"
   inner_product_param {
-    num_output: 48
+    num_output: 32
   }
 }
 layers {
