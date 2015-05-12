@@ -4,7 +4,7 @@ layers {
     name: "data"
     type: "data"
     source: "/home/iis/deep/rcnn_packages/caffe-new/examples/mycifar10/cifar10_val_leveldb"
-    meanfile: "../../../data/ilsvrc12/imagenet_mean.binaryproto"
+    meanfile: "/home/iis/deep/rcnn_packages/caffe-new/data/ilsvrc12/imagenet_mean.binaryproto"
     batchsize: 32
     cropsize: 227
     mirror: true
@@ -366,6 +366,22 @@ layers {
   }
   bottom: "fc8_kevin"
   top: "fc8_kevin_encode"
+}
+layers {
+  layer {
+    name: "loss_1"
+    type: "K1_euclidean_loss"
+  }
+  bottom: "fc8_kevin_encode"
+  bottom: "fc8_kevin_encode"
+}
+layers {
+  layer {
+    name: "loss_2"
+    type: "K2_euclidean_loss"
+  }
+  bottom: "fc8_kevin_encode"
+  bottom: "fc8_kevin_encode"
 }
 layers {
   layer {
