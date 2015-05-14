@@ -1,5 +1,5 @@
-train_net: "KevinNet_CIFAR10_64_train.prototxt"
-test_net: "KevinNet_CIFAR10_64_test.prototxt"
+train_net: "/home/iis/deep/rcnn_packages/Caffe-DeepBinaryCodes/examples/mycifar10/KevinNet_v2/CIFAR10-64/KevinNet_CIFAR10_64_train.prototxt"
+test_net: "/home/iis/deep/rcnn_packages/Caffe-DeepBinaryCodes/examples/mycifar10/KevinNet_v2/CIFAR10-64/KevinNet_CIFAR10_64_test.prototxt"
 test_iter: 100
 test_interval: 100
 base_lr: 0.001
@@ -10,5 +10,5 @@ display: 20
 max_iter: 50000
 momentum: 0.9
 weight_decay: 0.0005
-snapshot: 2000
+snapshot: 10000
 snapshot_prefix: "KevinNet_CIFAR10_64"
