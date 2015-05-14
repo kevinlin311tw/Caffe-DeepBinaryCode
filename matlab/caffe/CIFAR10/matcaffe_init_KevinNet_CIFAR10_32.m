@@ -11,7 +11,7 @@ if nargin < 2 || isempty(model_def_file)
   model_def_file = '/home/iis/deep/rcnn_packages/Caffe-DeepBinaryCodes/examples/mycifar10/KevinNet_v2/CIFAR10-32/KevinNet_CIFAR10_32_deploy.prototxt';
 end
 if nargin < 3 || isempty(model_file)
-  model_file = '/home/iis/deep/rcnn_packages/Caffe-DeepBinaryCodes/examples/mycifar10/KevinNet_v2/CIFAR10-32/KevinNet_CIFAR10_32_iter_50000.caffemodel';
+  model_file = '/home/iis/deep/rcnn_packages/Caffe-DeepBinaryCodes-models/KevinNet_CIFAR10_32_iter_50000.caffemodel';
 end
 
 

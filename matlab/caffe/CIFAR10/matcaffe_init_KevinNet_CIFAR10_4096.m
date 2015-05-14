@@ -8,11 +8,11 @@ if nargin < 1
 end
 if nargin < 2 || isempty(model_def_file)
   % By default use imagenet_deploy
-  model_def_file = '/home/iis/deep/rcnn_packages/caffe-new/models/bvlc_reference_caffenet/deploy_l7.prototxt';
+  model_def_file = '/home/iis/deep/rcnn_packages/Caffe-DeepBinaryCodes/models/bvlc_reference_caffenet/deploy_l7.prototxt';
 end
 if nargin < 3 || isempty(model_file)
   % By default use caffe reference model
-  model_file = '/home/iis/deep/rcnn_packages/caffe-new/examples/mycifar10/KevinNet/KevinNet_CIFAR10_128_iter_50000.caffemodel';
+  model_file = '/home/iis/deep/rcnn_packages/Caffe-DeepBinaryCodes-models/KevinNet_CIFAR10_128_iter_50000.caffemodel';
 end
 
 

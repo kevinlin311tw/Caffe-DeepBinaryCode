@@ -1,4 +1,4 @@
-function  matcaffe_init_KevinNet_CIFAR10_48(use_gpu, model_def_file, model_file)
+function  matcaffe_init_KevinNet_CIFAR10_12(use_gpu, model_def_file, model_file)
 % matcaffe_init(model_def_file, model_file, use_gpu)
 % Initilize matcaffe wrapper
 
@@ -8,10 +8,10 @@ if nargin < 1
 end
 if nargin < 2 || isempty(model_def_file)
   % By default use imagenet_deploy
-  model_def_file = '/home/iis/deep/rcnn_packages/Caffe-DeepBinaryCodes/examples/mycifar10/KevinNet_v2/CIFAR10-48/KevinNet_CIFAR10_48_deploy.prototxt';
+  model_def_file = '/home/iis/deep/rcnn_packages/Caffe-DeepBinaryCodes/examples/mycifar10/KevinNet_v2/CIFAR10-12/KevinNet_CIFAR10_12_deploy.prototxt';
 end
 if nargin < 3 || isempty(model_file)
-  model_file = '/home/iis/deep/rcnn_packages/Caffe-DeepBinaryCodes-models/KevinNet_CIFAR10_48_iter_50000.caffemodel';
+  model_file = '/home/iis/deep/rcnn_packages/Caffe-DeepBinaryCodes-models/KevinNet_CIFAR10_12_iter_50000.caffemodel';
 end
 
 
