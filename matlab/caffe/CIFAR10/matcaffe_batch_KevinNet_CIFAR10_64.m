@@ -42,7 +42,7 @@ else
   matcaffe_init_KevinNet_CIFAR10_64();
 end
 
-d = load('ilsvrc_2064_mean');
+d = load('ilsvrc_2012_mean');
 IMAGE_MEAN = d.image_mean;
 
 % prepare input

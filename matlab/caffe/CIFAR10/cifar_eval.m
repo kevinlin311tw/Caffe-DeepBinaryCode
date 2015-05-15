@@ -1,6 +1,7 @@
-function cifar_eval( trn_list, trn_label, trn_binary, tst_list, tst_label, tst_binary)   
+function cifar_eval( trn_list, trn_label, trn_binary, tst_list, tst_label, tst_binary, bits)   
 K = 1000;
-fid = fopen('log_cifar10.txt', 'wt');
+fname = sprintf('log_cifar10_%d.txt',bits);
+fid = fopen(fname, 'wt');
 
 correct = zeros(K,1);
 total = zeros(K,1);
@@ -14,7 +15,8 @@ for i = 1:10000
     query_binary = tst_binary(:,i);
     
     tic
-    similarity = pdist2(trn_binary',query_binary','hamming');
+    %similarity = pdist2(trn_binary',query_binary','hamming');
+    similarity = pdist2(trn_binary',query_binary','euclidean');
     toc
     fprintf('Complete Query [Euclidean] %.2f seconds\n',toc);
 
