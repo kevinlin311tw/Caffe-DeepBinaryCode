@@ -32,7 +32,7 @@ void K2_EuclideanLossLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& botto
   } 
   avg = sum / count;
   loss = (avg - Dtype(0.5)) * (avg - Dtype(0.5));
-  (*top)[0]->mutable_cpu_data()[0] = loss;
+  (*top)[0]->mutable_cpu_data()[0] = loss / bottom[0]->num() / Dtype(2);
 
 
   diff_.mutable_cpu_data()[0] = avg - Dtype(0.5);
@@ -57,7 +57,7 @@ void K2_EuclideanLossLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,
     if (propagate_down[i]) {
       const Dtype sign = (i == 0) ? 1 : -1;
       const Dtype alpha = sign * top[0]->cpu_diff()[0];
-      Dtype result = (alpha * Dtype(2) * diff_.cpu_data()[0] / (*bottom)[i]->count());
+      Dtype result = (alpha * diff_.cpu_data()[0] / (*bottom)[i]->count()) / (*bottom)[i]->num();
       for (int j = 0; j < (*bottom)[i]->count(); j++)
       	(*bottom)[i]->mutable_cpu_diff()[j] = result; 
     }

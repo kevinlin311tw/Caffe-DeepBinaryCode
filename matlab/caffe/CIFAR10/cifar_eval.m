@@ -1,13 +1,18 @@
 function cifar_eval( trn_list, trn_label, trn_binary, tst_list, tst_label, tst_binary, bits)   
 K = 1000;
-fname = sprintf('log_cifar10_%d.txt',bits);
+QueryTimes = 10000;
+fname = sprintf('log_cifar10_%d.txt',bits);%P@K
 fid = fopen(fname, 'wt');
+fname_map = sprintf('log_cifar10_%d_MAP.txt',bits);%MAP 
+fid_map = fopen(fname_map, 'wt');
+
 
 correct = zeros(K,1);
 total = zeros(K,1);
 error = zeros(K,1);
+AP = zeros(QueryTimes,1);
 
-for i = 1:10000
+for i = 1:QueryTimes
     
     img_path = tst_list(i,1);
     query_label = get_label(img_path, tst_label);
@@ -24,7 +29,8 @@ for i = 1:10000
     
     
     buffer_yes = zeros(K,1);
-    buffer_total = zeros(K,1);    
+    buffer_total = zeros(K,1);
+    total_relevant = 0;
     
     for j = 1:K
         filename = trn_list(y2(j),1);
@@ -32,6 +38,7 @@ for i = 1:10000
         
         if (query_label==retrieval_label)
             buffer_yes(j,1) = 1;
+            total_relevant = total_relevant + 1;
         end
         buffer_total(j,1) = 1;
 
@@ -43,6 +50,13 @@ for i = 1:10000
             total(j,1) = total(j,1) + buffer_total(kk,1);
         end
     end
+    
+    for j = 1:K
+        precision = correct(j,1)/total(j,1);
+        AP(i,1) = AP(i,1) + precision*buffer_yes(j,1);
+    end
+    AP(i,1) = AP(i,1)/(total_relevant+0.00001);
+    
 end    
     accuracy = correct./total;
     plot(1:K,accuracy);
@@ -53,10 +67,15 @@ for i = 1:K
     fprintf(fid, '%d %f\n',i,correct(i,1)/total(i,1));
 end    
 
-
+MAP = 0;
+for i = 1:QueryTimes
+    MAP = MAP + AP(i,1);
+end
+%MAP = MAP/QueryTimes;
+fprintf(fid_map, '%f\n', MAP);
 
 fclose(fid);
-     
+fclose(fid_map);    
      
 end
 

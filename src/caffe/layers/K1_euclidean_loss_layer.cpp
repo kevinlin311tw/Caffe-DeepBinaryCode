@@ -29,9 +29,9 @@ void K1_EuclideanLossLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& botto
       Dtype sub = bottom_data[i] - Dtype(0.5);
       diff_.mutable_cpu_data()[i] = sub;
       Dtype dot = sub * sub; 
-      loss = loss - dot;
+      loss = loss + dot;
   }
-  (*top)[0]->mutable_cpu_data()[0] = loss/(Dtype(2)*count);
+  (*top)[0]->mutable_cpu_data()[0] = loss/(Dtype(2)*count*bottom[0]->num());
 }
 
 template <typename Dtype>
@@ -40,7 +40,7 @@ void K1_EuclideanLossLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,
   for (int i = 0; i < 2; ++i) {
     if (propagate_down[i]) {
       const Dtype sign = (i == 0) ? -1 : 1;
-      const Dtype alpha = sign * top[0]->cpu_diff()[0] / (*bottom)[i]->count();
+      const Dtype alpha = sign * top[0]->cpu_diff()[0] / (*bottom)[i]->count() / (*bottom)[i]->num();
       caffe_cpu_axpby(
           (*bottom)[i]->count(),              // count
           alpha,                              // alpha

@@ -28,16 +28,27 @@
  binary64_train = (scores_train>0.5);
  save(['binary64_train.mat'],'binary64_train','-v7.3');
  %}
+
+% P@K, MAP evaluation
  %cifar_eval( list_im_train, trn_label, binary12_train, list_im_test, tst_label, binary12_test, 12);
  %cifar_eval( list_im_train, trn_label, binary32_train, list_im_test, tst_label, binary32_test, 32);
  %cifar_eval( list_im_train, trn_label, binary48_train, list_im_test, tst_label, binary48_test, 48);
  %cifar_eval( list_im_train, trn_label, binary64_train, list_im_test, tst_label, binary64_test, 64);
- 
- 
+
+ %{
  [scores_test , list_im_test] = matcaffe_batch_AlexNet_CIFAR10_4096('cifar10_files_test.txt', 1);
- alex4096_test = (scores_test>0.5);
+ alex4096_test = scores_test;
  save(['alex4096_test.mat'],'alex4096_test','-v7.3');
  [scores_train , list_im_train] = matcaffe_batch_AlexNet_CIFAR10_4096('cifar10_files_train.txt', 1);
- alex4096_train = (scores_train>0.5);
+ alex4096_train = scores_train;
  save(['alex4096_train.mat'],'alex4096_train','-v7.3');
+ %}
  cifar_eval( list_im_train, trn_label, alex4096_train, list_im_test, tst_label, alex4096_test, 4096);
+ 
+ %Hamming radius evaluation
+ %{
+ cifar_eval_hamming2( list_im_train, trn_label, binary12_train, list_im_test, tst_label, binary12_test, 12);
+ cifar_eval_hamming2( list_im_train, trn_label, binary32_train, list_im_test, tst_label, binary32_test, 32);
+ cifar_eval_hamming2( list_im_train, trn_label, binary48_train, list_im_test, tst_label, binary48_test, 48);
+ cifar_eval_hamming2( list_im_train, trn_label, binary64_train, list_im_test, tst_label, binary64_test, 64);
+ %}
