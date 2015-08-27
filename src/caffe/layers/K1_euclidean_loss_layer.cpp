@@ -29,7 +29,7 @@ void K1_EuclideanLossLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& botto
       Dtype sub = bottom_data[i] - Dtype(0.5);
       diff_.mutable_cpu_data()[i] = sub;
       Dtype dot = sub * sub; 
-      loss = loss + dot;
+      loss = loss - dot;
   }
   (*top)[0]->mutable_cpu_data()[0] = loss/(Dtype(2)*count*bottom[0]->num());
 }
