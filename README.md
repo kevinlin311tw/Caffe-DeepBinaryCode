@@ -1,4 +1,4 @@
-_FYI: This project is a **work in progress**. If you'd like to run the training code, please make sure you already have **the dataset (leveldb/lmdb, w*h=256*256)** and **ImageNet pre-trained model!!!!!!**_
+_FYI: This project is a **work in progress!!!!** If you'd like to run the training code, please make sure you already have **the dataset (leveldb/lmdb, w/h=256/256)** and **ImageNet pre-trained model**_
 
 ---
 
