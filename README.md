@@ -1,4 +1,4 @@
-_FYI: This project is a **work in progress**. If you'd like to run the training code, please make sure you already have **the dataset (leveldb/lmdb)** and **ImageNet pre-train model!!!!!!**_
+_FYI: This project is a **work in progress**. If you'd like to run the training code, please make sure you already have **the dataset (leveldb/lmdb, w*h=256*256)** and **ImageNet pre-trained model!!!!!!**_
 
 ---
 
@@ -25,3 +25,9 @@ If you find our works useful in your research, please consider citing:
     Supervised Learning of Semantics-Preserving Hashing via Deep Neural Networks for Large-Scale Image Search
     Huei-Fang Yang, Kevin Lin, Chu-Song Chen
     arXiv preprint arXiv:1507.00101
+
+
+
+### Note
+
+We will provide the training script and user guide soon!!
