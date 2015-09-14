@@ -460,6 +460,8 @@ LayerParameter_LayerType UpgradeV0LayerType(const string& type) {
     return LayerParameter_LayerType_CONCAT;
   } else if (type == "conv") {
     return LayerParameter_LayerType_CONVOLUTION;
+  } else if (type == "contrast_loss") {
+    return LayerParameter_LayerType_CONTRASTIVE_LOSS;
   } else if (type == "data") {
     return LayerParameter_LayerType_DATA;
   } else if (type == "dropout") {
