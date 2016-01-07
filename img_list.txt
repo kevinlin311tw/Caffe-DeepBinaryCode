@@ -1,0 +1,12 @@
+/data/cifar10/demo_imgs/horse2.jpg
+/data/cifar10/demo_imgs/horse1.jpg
+/data/cifar10/demo_imgs/car2.jpg
+/data/cifar10/demo_imgs/bird2.jpg
+/data/cifar10/demo_imgs/bus1.jpg
+/data/cifar10/demo_imgs/car1.jpg
+/data/cifar10/demo_imgs/air1.jpg
+/data/cifar10/demo_imgs/bird1.jpg
+/data/cifar10/demo_imgs/air2.jpg
+/data/cifar10/demo_imgs/bus2.jpg
+/data/cifar10/demo_imgs/deer1.jpg
+/data/cifar10/demo_imgs/deer2.jpg
