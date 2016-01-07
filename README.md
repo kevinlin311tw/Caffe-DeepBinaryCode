@@ -12,12 +12,10 @@ We present a simple yet effective supervised deep hash approach that constructs 
 <img src="https://www.csie.ntu.edu.tw/~r01944012/ssdh_intro.png" width="800">
 
 The details can be found in the following [arXiv preprint.](http://arxiv.org/abs/1507.00101)
-
 Presentation slide can be found [here](http://www.csie.ntu.edu.tw/~r01944012/deepworkshop-slide.pdf)
 
 
-
-### Citing the deep hashing work
+## Citing the deep hashing work
 
 If you find our work useful in your research, please consider citing:
 
@@ -25,9 +23,6 @@ If you find our work useful in your research, please consider citing:
     Huei-Fang Yang, Kevin Lin, Chu-Song Chen
     arXiv preprint arXiv:1507.00101
 
-    Deep Learning of Binary Hash Codes for Fast Image Retrieval
-    K. Lin, H.-F. Yang, J.-H. Hsiao, C.-S. Chen
-    CVPR Workshop (CVPRW) on Deep Learning in Computer Vision, DeepVision 2015, June 2015.
 
 
 ## Prerequisites
@@ -54,7 +49,7 @@ Launch matlab and run `demo.m`. This demo will generate 48-bits binary codes for
     >> demo
 
 
-<img src="https://www.csie.ntu.edu.tw/~r01944012/ssdh_demo.png" width="400">
+<img src="https://www.csie.ntu.edu.tw/~r01944012/ssdh_demo.png" width="350">
 
 
 ## Retrieval evaluation on CIFAR10
@@ -110,7 +105,11 @@ Launch matlab, run `demo.m` and enjoy!
 
 ## Train SSDH on another dataset
 
-It should be easy to train the model using another dataset as long as that dataset has label annotations. You need to convert the dataset into leveldb/lmdb format using "create_imagenet.sh".  We will show you how to do this.
+It should be easy to train the model using another dataset as long as that dataset has label annotations.
+ 
+  0. Convert your training/test set into leveldb/lmdb format using `create_imagenet.sh`.
+  0. Modify the `source` in `/example/SSDH/train_val.prototxt` to link to your training/test set.
+  0. Run `./examples/SSDH/train.sh`, and start training on your dataset.
 
 
 ## Contact
