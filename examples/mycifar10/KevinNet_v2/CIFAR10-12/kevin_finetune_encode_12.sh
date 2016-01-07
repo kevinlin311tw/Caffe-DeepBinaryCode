@@ -1,1 +1,0 @@
-/home/iis/deep/rcnn_packages/Caffe-DeepBinaryCodes/build/tools/caffe train -solver  /home/iis/deep/rcnn_packages/Caffe-DeepBinaryCodes/examples/mycifar10/KevinNet_v2/CIFAR10-12/KevinNet_CIFAR10_12_solver.prototxt -weights /home/iis/deep/rcnn_packages/caffe-new/models/bvlc_reference_caffenet/bvlc_reference_caffenet.caffemodel -gpu 0 2>&1 | tee log.txt
