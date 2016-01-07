@@ -9,11 +9,13 @@ Created by Kevin Lin, Huei-Fang Yang, and Chu-Song Chen at Academia Sinica, Taip
 
 We present a simple yet effective supervised deep hash approach that constructs binary hash codes from labeled data for large-scale image search. SSDH constructs hash functions as a latent layer in a deep network and the binary codes are learned by minimizing an objective function defined over classification error and other desirable hash codes properties. Compared to state-of-the-art results, SSDH achieves 26.30% (89.68% vs. 63.38%), 17.11% (89.00% vs. 71.89%) and 19.56% (31.28% vs. 11.72%) higher precisions averaged over a different number of top returned images for the CIFAR-10, NUS-WIDE, and SUN397 datasets, respectively.
 
+<img src="https://www.csie.ntu.edu.tw/~r01944012/ssdh_intro.png" width="800">
+
 The details can be found in the following [arXiv preprint.](http://arxiv.org/abs/1507.00101)
 
-Deep Learning workshop presentation slide [PDF](http://www.csie.ntu.edu.tw/~r01944012/deepworkshop-slide.pdf)
+Presentation slide can be found [here](http://www.csie.ntu.edu.tw/~r01944012/deepworkshop-slide.pdf)
 
-<img src="https://www.csie.ntu.edu.tw/~r01944012/ssdh_intro.png" width="800">
+
 
 ### Citing the deep hashing work
 
@@ -51,7 +53,8 @@ Launch matlab and run `demo.m`. This demo will generate 48-bits binary codes for
     
     >> demo
 
-<img src="https://www.csie.ntu.edu.tw/~r01944012/ssdh_demo.png" width="600">
+
+<img src="https://www.csie.ntu.edu.tw/~r01944012/ssdh_demo.png" width="400">
 
 
 ## Retrieval evaluation on CIFAR10
@@ -73,7 +76,7 @@ Moreover, simply run the following commands to generate the `precision at k` cur
 You will reproduce the precision curves with respect to different number of top retrieved samples when the 48-bit hash codes are
 used in the evaluation.
  
-## Train your SSDH on CIFAR10
+## Train SSDH on CIFAR10
 
 Simply run the following command to train SSDH:
 
@@ -104,6 +107,11 @@ To use the model, modify the `model_file` in `demo.m` to link to your model:
 Launch matlab, run `demo.m` and enjoy!
     
     >> demo
+
+## Train SSDH on another dataset
+
+It should be easy to train the model using another dataset as long as that dataset has label annotations. You need to convert the dataset into leveldb/lmdb format using "create_imagenet.sh".  We will show you how to do this.
+
 
 ## Contact
 
