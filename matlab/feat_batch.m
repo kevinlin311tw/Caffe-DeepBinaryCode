@@ -4,14 +4,6 @@ if nargin < 1
   % By default use CPU
   use_gpu = 0;
 end
-if nargin < 2 || isempty(net_model)
-  % By default use imagenet_deploy
-  net_model = '/home/titan/hfyang/hashing/training/NUS-WIDE/NUS-KevinNet-48/KevinNet_NUS_48_deploy.prototxt';
-end
-if nargin < 3 || isempty(net_weights)
-  % By default use caffe reference model
-  net_weights = '/home/titan/hfyang/hashing/training/NUS-WIDE/NUS-KevinNet-48/models-20150720/KevinNet_NUS_48_iter_50000';
-end
 if ischar(list_im)
     %Assume it is a file contaning the list of images
     filename = list_im;
@@ -41,7 +33,7 @@ end
 net = caffe.Net(net_model, net_weights, phase);
 
 % load mean file
-d = load('/home/iis/adsc/caffe-new-cbd-udnn/matlab/+caffe/imagenet/ilsvrc_2012_mean.mat');
+d = load('./matlab/+caffe/imagenet/ilsvrc_2012_mean.mat');
 mean_data = d.mean_data;
 
 batch_size = 10;
