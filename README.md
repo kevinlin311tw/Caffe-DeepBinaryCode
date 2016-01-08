@@ -118,11 +118,11 @@ It should be easy to train the model using another dataset as long as that datas
 
 If `./prepare.sh` fails to download data, you may manually download the resouces from:
 
-    - 48-bit SSDH model: [MEGA](https://mega.nz/#!kJ1jwDpJ!X4dVUeWJ7Eqg9L8bhJaGbr9l5-HS3ccudbjIjIbYNpk), [DropBox](https://www.dropbox.com/s/6iqyz1mdhadhzbu/SSDH48_iter_50000.caffemodel?dl=0), [BaiduYun](http://pan.baidu.com/s/1nurCaJR)
+0. 48-bit SSDH model: [MEGA](https://mega.nz/#!kJ1jwDpJ!X4dVUeWJ7Eqg9L8bhJaGbr9l5-HS3ccudbjIjIbYNpk), [DropBox](https://www.dropbox.com/s/6iqyz1mdhadhzbu/SSDH48_iter_50000.caffemodel?dl=0), [BaiduYun](http://pan.baidu.com/s/1nurCaJR)
 
-    - CIFAR10 dataset (jpg format): [MEGA](https://mega.nz/#!RENV1bhZ!x0uFnAkqUSTJzKr6HzeeNV9mtDjlgQ0x6ZaXfpxbJkw), [DropBox](https://www.dropbox.com/s/f7q3bbgvat2q1u2/cifar10-dataset.zip?dl=0), [BaiduYun](http://pan.baidu.com/s/1pKsSK7h)
+0. CIFAR10 dataset (jpg format): [MEGA](https://mega.nz/#!RENV1bhZ!x0uFnAkqUSTJzKr6HzeeNV9mtDjlgQ0x6ZaXfpxbJkw), [DropBox](https://www.dropbox.com/s/f7q3bbgvat2q1u2/cifar10-dataset.zip?dl=0), [BaiduYun](http://pan.baidu.com/s/1pKsSK7h)
 
-    - AlexNet pretrained networks: [MEGA](https://mega.nz/#!UZ0VGIYB!y2crhbo89S9hYLv5TyHLXXB5Sus8ZkpUzTNkeUPkfU4), [DropBox](https://www.dropbox.com/s/nlggnj47xxdmwkb/bvlc_reference_caffenet.caffemodel?dl=0), [BaiduYun](http://pan.baidu.com/s/1qWRMy4G)
+0. AlexNet pretrained networks: [MEGA](https://mega.nz/#!UZ0VGIYB!y2crhbo89S9hYLv5TyHLXXB5Sus8ZkpUzTNkeUPkfU4), [DropBox](https://www.dropbox.com/s/nlggnj47xxdmwkb/bvlc_reference_caffenet.caffemodel?dl=0), [BaiduYun](http://pan.baidu.com/s/1qWRMy4G)
 
 
 ## Contact
