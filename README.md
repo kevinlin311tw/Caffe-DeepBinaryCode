@@ -112,6 +112,19 @@ It should be easy to train the model using another dataset as long as that datas
   0. Run `./examples/SSDH/train.sh`, and start training on your dataset.
 
 
+## Resources
+
+**Note**: This documentation may contain links to third party websites, which are provided for your convenience only. Third party websites may be subject to the third party’s terms, conditions, and privacy statements.
+
+If `./prepare.sh` fails to download data, you may manually download the resouces from:
+
+    - 48-bit SSDH model: [MEGA](https://mega.nz/#!kJ1jwDpJ!X4dVUeWJ7Eqg9L8bhJaGbr9l5-HS3ccudbjIjIbYNpk), [DropBox](https://www.dropbox.com/s/6iqyz1mdhadhzbu/SSDH48_iter_50000.caffemodel?dl=0), [BaiduYun](http://pan.baidu.com/s/1nurCaJR)
+
+    - CIFAR10 dataset (jpg format): [MEGA](https://mega.nz/#!RENV1bhZ!x0uFnAkqUSTJzKr6HzeeNV9mtDjlgQ0x6ZaXfpxbJkw), [DropBox](https://www.dropbox.com/s/f7q3bbgvat2q1u2/cifar10-dataset.zip?dl=0), [BaiduYun](http://pan.baidu.com/s/1pKsSK7h)
+
+    - AlexNet pretrained networks: [MEGA](https://mega.nz/#!UZ0VGIYB!y2crhbo89S9hYLv5TyHLXXB5Sus8ZkpUzTNkeUPkfU4), [DropBox](https://www.dropbox.com/s/nlggnj47xxdmwkb/bvlc_reference_caffenet.caffemodel?dl=0), [BaiduYun](http://pan.baidu.com/s/1qWRMy4G)
+
+
 ## Contact
 
 Please feel free to leave suggestions or comments to Kevin Lin (kevinlin311.tw@iis.sinica.edu.tw), Huei-Fang Yang (hfyang@citi.sinica.edu.tw) or Chu-Song Chen (song@iis.sinica.edu.tw)

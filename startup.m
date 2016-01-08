@@ -1,2 +1,2 @@
 addpath(genpath(pwd));
-fprintf('caffe-ssdh startup\n');
+fprintf('SSDH startup\n');

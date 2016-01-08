@@ -4,6 +4,10 @@
 close all;
 clear;
 
+% Initialize
+addpath(genpath(pwd));
+fprintf('SSDH startup\n');
+
 % -----------------------------------------------------------
 % 48-bits binary codes extraction
 %
