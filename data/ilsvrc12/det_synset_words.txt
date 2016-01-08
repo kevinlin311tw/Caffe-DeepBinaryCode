@@ -1,0 +1,200 @@
+n02672831 accordion
+n02691156 airplane
+n02219486 ant
+n02419796 antelope
+n07739125 apple
+n02454379 armadillo
+n07718747 artichoke
+n02764044 axe
+n02766320 baby bed
+n02769748 backpack
+n07693725 bagel
+n02777292 balance beam
+n07753592 banana
+n02786058 band aid
+n02787622 banjo
+n02799071 baseball
+n02802426 basketball
+n02807133 bathing cap
+n02815834 beaker
+n02131653 bear
+n02206856 bee
+n07720875 bell pepper
+n02828884 bench
+n02834778 bicycle
+n02840245 binder
+n01503061 bird
+n02870880 bookshelf
+n02883205 bow tie
+n02879718 bow
+n02880940 bowl
+n02892767 brassiere
+n07880968 burrito
+n02924116 bus
+n02274259 butterfly
+n02437136 camel
+n02951585 can opener
+n02958343 car
+n02970849 cart
+n02402425 cattle
+n02992211 cello
+n01784675 centipede
+n03000684 chain saw
+n03001627 chair
+n03017168 chime
+n03062245 cocktail shaker
+n03063338 coffee maker
+n03085013 computer keyboard
+n03793489 computer mouse
+n03109150 corkscrew
+n03128519 cream
+n03134739 croquet ball
+n03141823 crutch
+n07718472 cucumber
+n03797390 cup or mug
+n03188531 diaper
+n03196217 digital clock
+n03207941 dishwasher
+n02084071 dog
+n02121808 domestic cat
+n02268443 dragonfly
+n03249569 drum
+n03255030 dumbbell
+n03271574 electric fan
+n02503517 elephant
+n03314780 face powder
+n07753113 fig
+n03337140 filing cabinet
+n03991062 flower pot
+n03372029 flute
+n02118333 fox
+n03394916 french horn
+n01639765 frog
+n03400231 frying pan
+n02510455 giant panda
+n01443537 goldfish
+n03445777 golf ball
+n03445924 golfcart
+n07583066 guacamole
+n03467517 guitar
+n03483316 hair dryer
+n03476991 hair spray
+n07697100 hamburger
+n03481172 hammer
+n02342885 hamster
+n03494278 harmonica
+n03495258 harp
+n03124170 hat with a wide brim
+n07714571 head cabbage
+n03513137 helmet
+n02398521 hippopotamus
+n03535780 horizontal bar
+n02374451 horse
+n07697537 hotdog
+n03584254 iPod
+n01990800 isopod
+n01910747 jellyfish
+n01882714 koala bear
+n03633091 ladle
+n02165456 ladybug
+n03636649 lamp
+n03642806 laptop
+n07749582 lemon
+n02129165 lion
+n03676483 lipstick
+n01674464 lizard
+n01982650 lobster
+n03710721 maillot
+n03720891 maraca
+n03759954 microphone
+n03761084 microwave
+n03764736 milk can
+n03770439 miniskirt
+n02484322 monkey
+n03790512 motorcycle
+n07734744 mushroom
+n03804744 nail
+n03814639 neck brace
+n03838899 oboe
+n07747607 orange
+n02444819 otter
+n03908618 pencil box
+n03908714 pencil sharpener
+n03916031 perfume
+n00007846 person
+n03928116 piano
+n07753275 pineapple
+n03942813 ping-pong ball
+n03950228 pitcher
+n07873807 pizza
+n03958227 plastic bag
+n03961711 plate rack
+n07768694 pomegranate
+n07615774 popsicle
+n02346627 porcupine
+n03995372 power drill
+n07695742 pretzel
+n04004767 printer
+n04019541 puck
+n04023962 punching bag
+n04026417 purse
+n02324045 rabbit
+n04039381 racket
+n01495701 ray
+n02509815 red panda
+n04070727 refrigerator
+n04074963 remote control
+n04116512 rubber eraser
+n04118538 rugby ball
+n04118776 ruler
+n04131690 salt or pepper shaker
+n04141076 saxophone
+n01770393 scorpion
+n04154565 screwdriver
+n02076196 seal
+n02411705 sheep
+n04228054 ski
+n02445715 skunk
+n01944390 snail
+n01726692 snake
+n04252077 snowmobile
+n04252225 snowplow
+n04254120 soap dispenser
+n04254680 soccer ball
+n04256520 sofa
+n04270147 spatula
+n02355227 squirrel
+n02317335 starfish
+n04317175 stethoscope
+n04330267 stove
+n04332243 strainer
+n07745940 strawberry
+n04336792 stretcher
+n04356056 sunglasses
+n04371430 swimming trunks
+n02395003 swine
+n04376876 syringe
+n04379243 table
+n04392985 tape player
+n04409515 tennis ball
+n01776313 tick
+n04591157 tie
+n02129604 tiger
+n04442312 toaster
+n06874185 traffic light
+n04468005 train
+n04487394 trombone
+n03110669 trumpet
+n01662784 turtle
+n03211117 tv or monitor
+n04509417 unicycle
+n04517823 vacuum
+n04536866 violin
+n04540053 volleyball
+n04542943 waffle iron
+n04554684 washer
+n04557648 water bottle
+n04530566 watercraft
+n02062744 whale
+n04591713 wine bottle
+n02391049 zebra
