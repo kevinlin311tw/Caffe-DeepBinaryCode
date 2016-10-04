@@ -10,18 +10,10 @@ layer {
   transform_param {
     mirror: true
     crop_size: 227
-    mean_file: "/home/iis/Research/projects/SSDH/caffe/data/ilsvrc12/imagenet_mean.binaryproto"
+    mean_file: "data/ilsvrc12/imagenet_mean.binaryproto"
   }
-# mean pixel / channel-wise mean instead of mean image
-#  transform_param {
-#    crop_size: 227
-#    mean_value: 104
-#    mean_value: 117
-#    mean_value: 123
-#    mirror: true
-#  }
   data_param {
-    source: "../data/cifar-10/train-test-split/train_leveldb"
+    source: "data/cifar10/cifar10_train_leveldb"
     batch_size: 32
   }
 }
@@ -36,18 +28,10 @@ layer {
   transform_param {
     mirror: false
     crop_size: 227
-    mean_file: "/home/iis/Research/packages/caffe-master/data/ilsvrc12/imagenet_mean.binaryproto"
+    mean_file: "data/ilsvrc12/imagenet_mean.binaryproto"
   }
-# mean pixel / channel-wise mean instead of mean image
-#  transform_param {
-#    crop_size: 227
-#    mean_value: 104
-#    mean_value: 117
-#    mean_value: 123
-#    mirror: true
-#  }
   data_param {
-    source: "../data/cifar-10/train-test-split/test_leveldb"
+    source: "data/cifar10/cifar10_val_leveldb"
     batch_size: 50
   }
 }
