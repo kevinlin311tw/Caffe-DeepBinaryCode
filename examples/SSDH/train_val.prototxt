@@ -1,4 +1,4 @@
-name: "CaffeNet"
+name: "SSDH"
 layer {
   name: "data"
   type: "Data"
@@ -10,10 +10,18 @@ layer {
   transform_param {
     mirror: true
     crop_size: 227
-    mean_file: "data/ilsvrc12/imagenet_mean.binaryproto"
+    mean_file: "/home/iis/Research/projects/SSDH/caffe/data/ilsvrc12/imagenet_mean.binaryproto"
   }
+# mean pixel / channel-wise mean instead of mean image
+#  transform_param {
+#    crop_size: 227
+#    mean_value: 104
+#    mean_value: 117
+#    mean_value: 123
+#    mirror: true
+#  }
   data_param {
-    source: "data/cifar10/cifar10_train_leveldb"
+    source: "../data/cifar-10/train-test-split/train_leveldb"
     batch_size: 32
   }
 }
@@ -26,13 +34,21 @@ layer {
     phase: TEST
   }
   transform_param {
-    mirror: true
+    mirror: false
     crop_size: 227
-    mean_file: "data/ilsvrc12/imagenet_mean.binaryproto"
+    mean_file: "/home/iis/Research/packages/caffe-master/data/ilsvrc12/imagenet_mean.binaryproto"
   }
+# mean pixel / channel-wise mean instead of mean image
+#  transform_param {
+#    crop_size: 227
+#    mean_value: 104
+#    mean_value: 117
+#    mean_value: 123
+#    mirror: true
+#  }
   data_param {
-    source: "data/cifar10/cifar10_val_leveldb"
-    batch_size: 32
+    source: "../data/cifar-10/train-test-split/test_leveldb"
+    batch_size: 50
   }
 }
 layer {
@@ -339,10 +355,10 @@ layer {
   }
 }
 layer {
-  name: "latent_layer"
+  name: "latent"
   type: "InnerProduct"
   bottom: "fc7"
-  top: "latent_layer"
+  top: "latent"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -355,41 +371,70 @@ layer {
     num_output: 48
     weight_filler {
       type: "gaussian"
-      std: 0.005
+      std: 0.01
     }
     bias_filler {
       type: "constant"
-      value: 1
+      value: 0
     }
   }
 }
 layer {
-  name: "encode_neuron"
-  bottom: "latent_layer"
-  top: "encode_neuron"
+  bottom: "latent"
+  top: "latent_sigmoid"
+  name: "latent_sigmoid"
   type: "Sigmoid"
 }
 layer {
-  name: "loss_beta"
+  bottom: "latent_sigmoid"
+  bottom: "latent_sigmoid"
+  name: "loss_1"
   type: "K1_EuclideanLoss"
-  bottom: "encode_neuron"
-  bottom: "encode_neuron"
+  propagate_down: 1
+  propagate_down: 0
   top: "loss: forcing-binary"
   loss_weight: 1
 }
 layer {
-  name: "loss_gamma"
+  name: "latent_sigmoid_reshape"
+  type: "Reshape"
+  bottom: "latent_sigmoid"
+  top: "latent_sigmoid_reshape"
+  reshape_param {
+    shape {
+      dim: 0  # copy the dimension from below
+      dim: 1
+      dim: 1
+      dim: -1 # infer it from the other dimensions
+    }
+  }
+}
+layer {
+  name: "latent_sigmoid_avg"
+  type: "Pooling"
+  bottom: "latent_sigmoid_reshape"
+  top: "latent_sigmoid_avg"
+  pooling_param {
+    pool: AVE
+    kernel_h: 1
+    kernel_w: 48
+  }
+}
+layer {
+  bottom: "latent_sigmoid_avg"
+  bottom: "latent_sigmoid_avg"
+  name: "loss_2"
   type: "K2_EuclideanLoss"
-  bottom: "encode_neuron"
-  bottom: "encode_neuron"
+  propagate_down: 1
+  propagate_down: 0
   top: "loss: 50%-fire-rate"
   loss_weight: 1
 }
 layer {
-  name: "fc8_classification"
+  name: "fc9"
   type: "InnerProduct"
-  bottom: "encode_neuron"
-  top: "fc8_classification"
+  bottom: "latent_sigmoid"
+  top: "fc9"
   param {
     lr_mult: 10
     decay_mult: 1
@@ -402,7 +447,7 @@ layer {
     num_output: 10
     weight_filler {
       type: "gaussian"
-      std: 0.01
+      std: 0.2
     }
     bias_filler {
       type: "constant"
@@ -411,21 +456,20 @@ layer {
   }
 }
 layer {
-  name: "loss_alpha"
-  type: "SoftmaxWithLoss"
-  bottom: "fc8_classification"
-  bottom: "label"
-  top: "loss: classfication-error"
-  loss_weight: 1
-}
-layer {
   name: "accuracy"
   type: "Accuracy"
-  bottom: "fc8_classification"
+  bottom: "fc9"
   bottom: "label"
   top: "accuracy"
   include {
     phase: TEST
   }
 }
-
+layer {
+  name: "loss"
+  type: "SoftmaxWithLoss"
+  bottom: "fc9"
+  bottom: "label"
+  top: "loss: classfication-error"
+  loss_weight: 1
+}
