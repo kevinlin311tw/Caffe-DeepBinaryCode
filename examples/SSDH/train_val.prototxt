@@ -10,10 +10,10 @@ layer {
   transform_param {
     mirror: true
     crop_size: 227
-    mean_file: "data/ilsvrc12/imagenet_mean.binaryproto"
+    mean_file: "../../data/ilsvrc12/imagenet_mean.binaryproto"
   }
   data_param {
-    source: "data/cifar10/cifar10_train_leveldb"
+    source: "../../data/cifar10/cifar10_train_leveldb"
     batch_size: 32
   }
 }
@@ -28,10 +28,10 @@ layer {
   transform_param {
     mirror: false
     crop_size: 227
-    mean_file: "data/ilsvrc12/imagenet_mean.binaryproto"
+    mean_file: "../../data/ilsvrc12/imagenet_mean.binaryproto"
   }
   data_param {
-    source: "data/cifar10/cifar10_val_leveldb"
+    source: "../../data/cifar10/cifar10_val_leveldb"
     batch_size: 50
   }
 }

@@ -61,7 +61,7 @@ Launch matalb and run `run_cifar10.m` to perform the evaluation of `precision at
 
 Then, you will get the `mAP` result as follows. 
 
-    >> MAP = 0.899731
+    >> MAP = 0.897165
 
 Moreover, simply run the following commands to generate the `precision at k` curves:
 
@@ -75,20 +75,20 @@ used in the evaluation.
 
 Simply run the following command to train SSDH:
 
+    $ cd /examples/SSDH
+    $ ./train.sh
 
-    $ ./examples/SSDH/train.sh
 
-
-After 50,000 iterations, the top-1 error is 9.7% on the test set of CIFAR10 dataset:
+After 50,000 iterations, the top-1 error is around 10% on the test set of CIFAR10 dataset:
 ```
-I0107 19:24:32.258903 23945 solver.cpp:326] Iteration 50000, loss = 0.0274982
-I0107 19:24:32.259012 23945 solver.cpp:346] Iteration 50000, Testing net (#0)
-I0107 19:24:36.696506 23945 solver.cpp:414]     Test net output #0: accuracy = 0.903125
-I0107 19:24:36.696543 23945 solver.cpp:414]     Test net output #1: loss: 50%-fire-rate = 1.47562e-06 (* 1 = 1.47562e-06 loss)
-I0107 19:24:36.696552 23945 solver.cpp:414]     Test net output #2: loss: classfication-error = 0.332657 (* 1 = 0.332657 loss)
-I0107 19:24:36.696559 23945 solver.cpp:414]     Test net output #3: loss: forcing-binary = -0.00317774 (* 1 = -0.00317774 loss)
-I0107 19:24:36.696565 23945 solver.cpp:331] Optimization Done.
-I0107 19:24:36.696570 23945 caffe.cpp:214] Optimization Done.
+I1109 20:36:30.962478 25398 solver.cpp:326] Iteration 50000, loss = -0.114461
+I1109 20:36:30.962507 25398 solver.cpp:346] Iteration 50000, Testing net (#0)
+I1109 20:36:45.218626 25398 solver.cpp:414]     Test net output #0: accuracy = 0.8979
+I1109 20:36:45.218660 25398 solver.cpp:414]     Test net output #1: loss: 50%-fire-rate = 0.0005225 (* 1 = 0.0005225 loss)
+I1109 20:36:45.218668 25398 solver.cpp:414]     Test net output #2: loss: classfication-error = 0.368178 (* 1 = 0.368178 loss)
+I1109 20:36:45.218675 25398 solver.cpp:414]     Test net output #3: loss: forcing-binary = -0.114508 (* 1 = -0.114508 loss)
+I1109 20:36:45.218682 25398 solver.cpp:331] Optimization Done.
+I1109 20:36:45.218686 25398 caffe.cpp:214] Optimization Done.
 ```
 
 The training process takes roughly 2~3 hours on a desktop with Titian X GPU. You will finally get your model named `SSDH48_iter_xxxxxx.caffemodel` under folder `/examples/SSDH/`
@@ -118,7 +118,7 @@ It should be easy to train the model using another dataset as long as that datas
 
 If `./prepare.sh` fails to download data, you may manually download the resouces from:
 
-0. 48-bit SSDH model: [MEGA](https://mega.nz/#!kJ1jwDpJ!X4dVUeWJ7Eqg9L8bhJaGbr9l5-HS3ccudbjIjIbYNpk), [DropBox](https://www.dropbox.com/s/6iqyz1mdhadhzbu/SSDH48_iter_50000.caffemodel?dl=0), [BaiduYun](http://pan.baidu.com/s/1nurCaJR)
+0. 48-bit SSDH model: [MEGA](https://mega.nz/#!9JMBlCaS!zsTl7eZRMdi25gkLWpj_Uv8LfN_2gQ-UF8OBMhio_3s), [DropBox](https://www.dropbox.com/s/6iqyz1mdhadhzbu/SSDH48_iter_50000.caffemodel?dl=0), [BaiduYun coming soon]
 
 0. CIFAR10 dataset (jpg format): [MEGA](https://mega.nz/#!RENV1bhZ!x0uFnAkqUSTJzKr6HzeeNV9mtDjlgQ0x6ZaXfpxbJkw), [DropBox](https://www.dropbox.com/s/f7q3bbgvat2q1u2/cifar10-dataset.zip?dl=0), [BaiduYun](http://pan.baidu.com/s/1pKsSK7h)
 
