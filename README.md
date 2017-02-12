@@ -7,7 +7,7 @@ Created by Kevin Lin, Huei-Fang Yang, and Chu-Song Chen at Academia Sinica, Taip
 
 ## Introduction
 
-We present a simple yet effective supervised deep hash approach that constructs binary hash codes from labeled data for large-scale image search. SSDH constructs hash functions as a latent layer in a deep network and the binary codes are learned by minimizing an objective function defined over classification error and other desirable hash codes properties. Compared to state-of-the-art results, SSDH achieves 26.30% (89.68% vs. 63.38%), 17.11% (89.00% vs. 71.89%) and 19.56% (31.28% vs. 11.72%) higher precisions averaged over a different number of top returned images for the CIFAR-10, NUS-WIDE, and SUN397 datasets, respectively.
+This paper presents a simple yet effective supervised deep hash approach that constructs binary hash codes from labeled data for large-scale image search. We assume that the semantic labels are governed by several latent attributes with each attribute on or off, and classification relies on these attributes. Based on this assumption, our approach, dubbed supervised semantics-preserving deep hashing (SSDH), constructs hash functions as a latent layer in a deep network and the binary codes are learned by minimizing an objective function defined over classification error and other desirable hash codes properties. With this design, SSDH has a nice characteristic that classification and retrieval are unified in a single learning model. Moreover, SSDH performs joint learning of image representations, hash codes, and classification in a point-wised manner, and thus is scalable to large-scale datasets. SSDH is simple and can be realized by a slight enhancement of an existing deep architecture for classification; yet it is effective and outperforms other hashing approaches on several benchmarks and large datasets. Compared with state-of-the-art approaches, SSDH achieves higher retrieval accuracy, while the classification performance is not sacrificed.
 
 <img src="https://www.csie.ntu.edu.tw/~r01944012/ssdh_intro.png" width="800">
 
@@ -18,6 +18,10 @@ Presentation slide can be found [here](http://www.csie.ntu.edu.tw/~r01944012/dee
 ## Citing the deep hashing work
 
 If you find our work useful in your research, please consider citing:
+
+    Supervised Learning of Semantics-Preserving Hash via Deep Convolutional Neural Networks
+    Huei-Fang Yang, Kevin Lin, Chu-Song Chen
+    IEEE Transactions on Pattern Analysis and Machine Intelligence (​TPAMI), 2017
 
     Supervised Learning of Semantics-Preserving Hashing via Deep Neural Networks for Large-Scale Image Search
     Huei-Fang Yang, Kevin Lin, Chu-Song Chen
@@ -54,14 +58,14 @@ Launch matlab and run `demo.m`. This demo will generate 48-bits binary codes for
 
 ## Retrieval evaluation on CIFAR10
 
-Launch matalb and run `run_cifar10.m` to perform the evaluation of `precision at k` and `mean average precision at k`. We set `k=1000` in the experiments. The bit length of binary codes is `48`. This process takes around 12 minutes.
+Launch matalb and run `run_cifar10.m` to perform the evaluation of `precision at k` and `mean average precision (mAP) at k`. In this CIFAR10 experiment, we employ all the test images (`10,000` images) as the query set, and we select all the training images (`50,000` images) to form the database. We computed mAP based on the entire retrieval list, thus we set `k = 50,000` in this experiment. The bit length of binary codes is `48`. This process takes around 12 minutes.
     
     >> run_cifar10
 
 
 Then, you will get the `mAP` result as follows. 
 
-    >> MAP = 0.897165
+    >> MAP = 0.913361
 
 Moreover, simply run the following commands to generate the `precision at k` curves:
 
@@ -79,17 +83,19 @@ Simply run the following command to train SSDH:
     $ ./train.sh
 
 
-After 50,000 iterations, the top-1 error is around 10% on the test set of CIFAR10 dataset:
+After 50,000 iterations, the top-1 error rate is around 10% on the test set of CIFAR10 dataset:
 ```
-I1109 20:36:30.962478 25398 solver.cpp:326] Iteration 50000, loss = -0.114461
-I1109 20:36:30.962507 25398 solver.cpp:346] Iteration 50000, Testing net (#0)
-I1109 20:36:45.218626 25398 solver.cpp:414]     Test net output #0: accuracy = 0.8979
-I1109 20:36:45.218660 25398 solver.cpp:414]     Test net output #1: loss: 50%-fire-rate = 0.0005225 (* 1 = 0.0005225 loss)
-I1109 20:36:45.218668 25398 solver.cpp:414]     Test net output #2: loss: classfication-error = 0.368178 (* 1 = 0.368178 loss)
-I1109 20:36:45.218675 25398 solver.cpp:414]     Test net output #3: loss: forcing-binary = -0.114508 (* 1 = -0.114508 loss)
-I1109 20:36:45.218682 25398 solver.cpp:331] Optimization Done.
-I1109 20:36:45.218686 25398 caffe.cpp:214] Optimization Done.
+I1221 16:27:44.764175  2985 solver.cpp:326] Iteration 50000, loss = -0.10567
+I1221 16:27:44.764205  2985 solver.cpp:346] Iteration 50000, Testing net (#0)
+I1221 16:27:58.907842  2985 solver.cpp:414]     Test net output #0: accuracy = 0.8989
+I1221 16:27:58.907877  2985 solver.cpp:414]     Test net output #1: loss: 50%-fire-rate = 0.000621793 (* 1 = 0.000621793 loss)
+I1221 16:27:58.907886  2985 solver.cpp:414]     Test net output #2: loss: classfication-error = 0.369317 (* 1 = 0.369317 loss)
+I1221 16:27:58.907892  2985 solver.cpp:414]     Test net output #3: loss: forcing-binary = -0.114405 (* 1 = -0.114405 loss)
+I1221 16:27:58.907897  2985 solver.cpp:331] Optimization Done.
+I1221 16:27:58.907902  2985 caffe.cpp:214] Optimization Done.
 ```
+
+
 
 The training process takes roughly 2~3 hours on a desktop with Titian X GPU. You will finally get your model named `SSDH48_iter_xxxxxx.caffemodel` under folder `/examples/SSDH/`
 

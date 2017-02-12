@@ -6,7 +6,7 @@ clear;
 use_gpu = 1;
 
 % top K returned images
-top_k = 1000;
+top_k = 50000;
 feat_len = 48;
 
 % set result folder
