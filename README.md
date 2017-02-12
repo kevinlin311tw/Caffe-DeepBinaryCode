@@ -130,6 +130,13 @@ If `./prepare.sh` fails to download data, you may manually download the resouces
 
 0. AlexNet pretrained networks: [MEGA](https://mega.nz/#!UZ0VGIYB!y2crhbo89S9hYLv5TyHLXXB5Sus8ZkpUzTNkeUPkfU4), [DropBox](https://www.dropbox.com/s/nlggnj47xxdmwkb/bvlc_reference_caffenet.caffemodel?dl=0), [BaiduYun](http://pan.baidu.com/s/1qWRMy4G)
 
+## FAQ
+
+Q: I have followed the instructions in README, and ran the evaluation code. As shown in README that I will get the mAP around `90%`, however, I can only get about `10%` mAP. Could you please give me some suggestions?
+
+A: You may have this problem if you didn’t launch matlab at caffe's root folder, which will automatically include important folders into PATH. 
+Two ways to solve this problem: First, run `startup.m` before you run `run_cifar10.m`. Second, open `./matlab/feat_batch.m` and change line 36 `d = load('./matlab/+caffe/imagenet/ilsvrc_2012_mean.mat');` to `d = load('THE-PATH-OF-THIS-REPO-IN-YOU-COMPUTER/matlab/+caffe/imagenet/ilsvrc_2012_mean.mat');`. Then run `run_cifar10.m`.
+
 
 ## Contact
 
