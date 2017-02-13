@@ -58,7 +58,7 @@ Launch matlab and run `demo.m`. This demo will generate 48-bits binary codes for
 
 ## Retrieval evaluation on CIFAR10
 
-Launch matalb and run `run_cifar10.m` to perform the evaluation of `precision at k` and `mean average precision (mAP) at k`. In this CIFAR10 demo, we employ all the test images (`10,000` images) as the query set, and we select all the training images (`50,000` images) to form the database (In the paper, only `1,000` test images are used as the query to comply with the settings in other methods.). We computed mAP based on the entire retrieval list, thus we set `k = 50,000` in this experiment. The bit length of binary codes is `48`. This process takes around 12 minutes.
+Launch matalb and run `run_cifar10.m` to perform the evaluation of `precision at k` and `mean average precision (mAP) at k`. In this CIFAR10 demo, we employ all the test images (`10,000` images) as the query set, and we select all the training images (`50,000` images) to form the database (In the paper, only `1,000` test images are used as the query to comply with the settings in other methods). We computed mAP based on the entire retrieval list, thus we set `k = 50,000` in this experiment. The bit length of binary codes is `48`. This process takes around 12 minutes.
     
     >> run_cifar10
 
