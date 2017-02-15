@@ -11,8 +11,7 @@ This paper presents a simple yet effective supervised deep hash approach that co
 
 <img src="https://www.csie.ntu.edu.tw/~r01944012/ssdh_intro.png" width="800">
 
-The TPAMI pre-print can be found in the following [pdf.](https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxrZXZpbmxpbjMxMXR3fGd4OjUxMmUwZjAzMjA0YmYyMTg)
-Previous arXiv pre-print can be found in the following [arXiv preprint.](http://arxiv.org/abs/1507.00101)
+The TPAMI pre-print can be found in the following [arXiv preprint.](https://arxiv.org/pdf/1507.00101v2.pdf)
 Presentation slide can be found [here](http://www.csie.ntu.edu.tw/~r01944012/deepworkshop-slide.pdf)
 
 
